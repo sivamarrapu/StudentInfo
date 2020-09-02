@@ -1,0 +1,76 @@
+ <html>
+ <head>
+ </head>
+ <body>
+  <form id="userForm">
+	<table align=center width="100%" height="230px">
+		<caption class="c1">INTERMEDIATE DETAILS<br><h6>All fields are mandatory</h6></caption>
+	   	<tr><td>Intermediate College Name<td><input type="text" required id="t1" name="t1"><td>Intermediate College Place<td><input type="text" id="t2" name="t2" required></tr>
+		<tr><td>Intermediate Regd No<td><input type="text" id="t3" name="t3" required><td>Month & Year of SSC Passed<td><select name="t4" required>
+        <option value="January">January</option>
+        <option value="February">February</option>
+        <option value="March">March</option>
+        <option value="April">April</option>
+        <option value="May">May</option>
+        <option value="June" selected>June</option>
+        <option value="July">July</option>
+        <option value="August">August</option>
+        <option value="September">September</option>
+        <option value="October">October</option>
+        <option value="November">November</option>
+        <option value="December">December</option>
+		</select> 
+		
+		<select name="t5" required>
+		<option value="2014">2014</option>
+        <option value="2015">2015</option>
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+		<option value="2018">2018</option>
+		<option value="2019" selected>2019</option>
+		</select> 
+		</tr>
+		<tr><td>Intermediate Medium<td><input type="text" id="t6" name="t6" required><td>Inter Ist Year CGPA<td><input type="text" id="t7" name="t7" required></tr>
+		<tr><td>Inter 2nd Year CGPA<td><input type="text" id="t8" name="t8" required><td>Inter Final CGPA<td><input type="text" id="t9" name="t9" required></tr>
+	</table><br>
+	<p align="center">
+		<input type="submit" value="Submit" align="right">
+	</p>
+	</form>
+	<div id='response'></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js "></script>
+<script>
+$(document).ready(function(){
+$('#userForm').submit(function(){
+
+// show that something is loading
+$('#response').html("<b>Loading response...</b>");
+
+// Call ajax for pass data to other place
+$.ajax({
+type: 'POST',
+url: 'interstore1.jsp',
+data: $(this).serialize() // getting filed value in serialize form
+})
+.done(function(data){ // if getting done then call.
+
+// show the response
+$('#response').html(data);
+
+})
+.fail(function() { // if fail then getting message
+
+// just in case posting your form failed
+alert( "Posting failed." );
+
+});
+
+// to prevent refreshing the whole page page
+return false;
+
+});
+});
+</script>
+
+	</body>
+	</html>

@@ -1,0 +1,338 @@
+////ssc_details
+
+create table ssc_details(
+
+rollno varchar(30) primary key,
+
+student_name varchar(100),
+
+father_name varchar(100),
+
+mother_name varchar(100),
+
+ssc_rollno varchar(30),
+
+ssc_school_name varchar(100),
+
+month_ssc_passed varchar(20),
+
+year_ssc_passed varchar(20),
+
+ssc_cgpa varchar(10),
+
+ssc_medium varchar(20),
+
+date_of_birth varchar(30),
+
+gender varchar(20),
+
+identification_marks1 varchar(150),
+
+identification_marks2  varchar(150)
+
+)
+
+//////
+
+////inter_details
+
+create table inter_details(
+
+rollno varchar(30) primary key,
+
+inter_collge_name varchar(200),
+
+inter_college_place varchar(200),
+
+inter_regd_num varchar(100),
+
+month_inter_passed varchar(20),
+
+year_inter_passed varchar(20),
+
+inter_medium varchar(20),
+
+inter_first_cgpa  varchar(10),
+
+inter_second_cgpa varchar(10),
+
+inter_final_cgpa varchar(10),
+
+inter_plustotype varchar(30)
+
+)
+
+//////
+
+////eamcet_details
+
+create table eamcet_details(
+
+rollno varchar(30) primary key,
+
+admin_type varchar(20),
+
+eamcet_hallticket varchar(200),
+
+eamcet_rank varchar(200),
+
+local_area varchar(100),
+
+religion varchar(30),
+
+caste varchar(20),
+
+subcaste  varchar(30)
+
+)
+
+////// students_details
+create table students_details(
+
+rollno varchar(30) primary key,
+
+name varchar(200),
+
+branch varchar(20),
+
+year  varchar(1),
+
+sem  varchar(1),
+
+section  varchar(1)
+)
+/////////////////////
+
+create table adhar_permanent_address(
+
+rollno varchar(30) primary key,
+
+adharno varchar(25),
+
+state varchar(75),
+
+district  varchar(75),
+
+mandal  varchar(50),
+
+village_street_area  varchar(50),
+
+house_no varchar(20),
+
+pincode varchar(20)
+)
+
+//////////////////////
+
+/////////////////////
+
+create table residence_details(
+
+rollno varchar(30) primary key,
+
+residence_type varchar(100), 
+
+mode_of_travel varchar(100),
+
+pstate varchar(75),
+
+pdistrict  varchar(75),
+
+pmandal  varchar(50),
+
+pvillage_street_area  varchar(50),
+
+phouse_no varchar(20),
+
+ppincode varchar(20)
+)
+
+<sup>*</sup>
+
+//////////////////////
+
+
+//LOAD DATA local INFILE "d:\\samba\\studentsdata.csv" INTO TABLE students_details COLUMNS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' ESCAPED BY '"' LINES TERMINATED BY '\n';
+
+
+showDist(this.value);
+	<tr id="h1" ><td>House No<td><input type="text" id="t4" name="t4"><td>Village/Street/Area<td><input type="text" id="t5" name="t5"></tr>
+		<tr id="h2" ><td>Mandal<td><input type="text" id="t6" name="t6"><td>District<td><input type="text" id="t7" name="t7"></tr>
+		<tr id="h3" ><td>State<td><input type="text" id="t8" name="t8"><td>Pincode<td><input type="text" id="t8" name="t8"></tr>
+
+
+///
+
+select s1.date_of_birth,o1.student_mobileno,a1.house_no,a1.village_street_area,a1.mandal,a1.district,a1.state,a1.pincode from ssc_details s1,other_details o1,adhar_permanent_address a1 where s1.rollno='19NG1A0501' and o1.rollno='19NG1A0501' and a1.rollno='19NG1A0501';	
+
+
+delete from ssc_details;
+delete from inter_details;
+delete from eamcet_details;
+delete from adhar_permanent_address;
+delete from residence_details;
+delete from other_details;
+
+SELECT column_name FROM information_schema.columns WHERE table_schema = 'aa_d8' AND table_name = 'eamcet_details';
+
+
+create table all_students
+(
+rollno varchar(30) primary key,
+
+student_name varchar(100),
+
+father_name varchar(100),
+
+mother_name varchar(100),
+
+ssc_rollno varchar(30),
+
+ssc_school_name varchar(100),
+
+month_ssc_passed varchar(20),
+
+year_ssc_passed varchar(20),
+
+ssc_cgpa varchar(10),
+
+ssc_medium varchar(20),
+
+date_of_birth varchar(30),
+
+gender varchar(20),
+
+identification_marks1 varchar(150),
+
+identification_marks2  varchar(150),
+
+ssc_cbse varchar(50),
+
+inter_collge_name varchar(200),
+
+inter_college_place varchar(200),
+
+inter_regd_num varchar(100),
+
+month_inter_passed varchar(20),
+
+year_inter_passed varchar(20),
+
+inter_medium varchar(20),
+
+inter_first_cgpa  varchar(10),
+
+inter_second_cgpa varchar(10),
+
+inter_final_cgpa varchar(10),
+
+inter_plustotype varchar(30),
+
+inter_tcno varchar(50),
+
+admin_type varchar(20),
+
+eamcet_hallticket varchar(200),
+
+eamcet_rank varchar(200),
+
+local_area varchar(100),
+
+religion varchar(30),
+
+caste varchar(20),
+
+subcaste  varchar(30),
+
+fee_reembursement varchar(10),
+
+nationality varchar(25),
+
+adharno varchar(25),
+
+state varchar(75),
+
+district  varchar(75),
+
+mandal  varchar(50),
+
+village_street_area  varchar(50),
+
+house_no varchar(20),
+
+pincode varchar(20),
+
+residence_type varchar(100), 
+
+mode_of_travel varchar(100),
+
+pstate varchar(75),
+
+pdistrict  varchar(75),
+
+pmandal  varchar(50),
+
+pvillage_street_area  varchar(50),
+
+phouse_no varchar(20),
+
+ppincode varchar(20),
+
+student_mobileno varchar(25),
+
+mother_mobileno varchar(25),
+
+father_mobileno varchar(25),
+
+mobileno_message varchar(25),
+
+mother_occupation varchar(50),
+
+father_occupation varchar(25),
+
+annual_income varchar(25),
+
+guardian_name varchar(25),
+
+guardian_mobileno varchar(25),
+
+parent_emailid varchar(50),
+
+student_emailid varchar(50),
+
+student_bolldgroup  varchar(5),
+
+student_bank_accountno varchar(30),
+
+student_bank_name varchar(40),
+
+student_bank_IFSC varchar(40),
+
+student_mother_tongue varchar(25),
+
+student_gothram varchar(40),
+
+student_actual_dateof_birth varchar(50)
+
+)
+
+
+
+create table students_details(
+
+rollno varchar(30) primary key,
+
+name varchar(200),
+
+section varchar(20),
+
+mobile_message varchar(15),
+
+eamcet_hallticket varchar(25),
+
+eamcet_rank varchar(25)
+
+)
+
+
+mysql> insert into dist values('Nalgonda','Telangana','Nalgonda');

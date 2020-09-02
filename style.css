@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  /*background: url('https://westfieldcc.files.wordpress.com/2011/10/simple-blur-ipad-background.jpg') no-repeat center center fixed;*/
+  /*background-size: cover;*/
+}
+.wrapper {
+  margin: 10px auto;
+  width: 90%;
+  font-family: sans-serif;
+  color: blue;
+  font-size: 13px;
+  line-height: 24px;
+  max-width: 1000px;
+  min-width: 340px;
+  overflow: hidden;
+  font-weight:bold;
+}
+.tabs li {
+  list-style: none;
+  float: left;
+  width: 20%;
+}
+.tabs a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  text-transform: uppercase;
+  color: white;
+  font-weight : bold;
+  height: 70px;
+  line-height: 90px;
+  background: linear-gradient(165deg, transparent 29%, steelblue 30%);
+  }
+.tabs a:hover,
+.tabs a.active {
+  background: linear-gradient(165deg, transparent 29%, #F2EEE2 30%);
+  color: blue;
+}
+.tabs a:before {
+  content: '';
+  position: absolute;
+  z-index: 11;
+  left: 100%;
+  top: -100%;
+  height: 70px;
+  line-height: 90px;
+  width: 0;
+  border-bottom: 70px solid rgba(0, 0, 0, 0.1);
+  border-right: 7px solid transparent;
+}
+.tabs a.active:before {
+  content: '';
+  position: absolute;
+  z-index: 11;
+  left: 100%;
+  top: -100%;
+  height: 70px;
+  line-height: 90px;
+  width: 0;
+  border-bottom: 70px solid rgba(0, 0, 0, 0.2);
+  border-right: 20px solid transparent;
+}
+.tabgroup {
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+  
+}
+.tabgroup div {
+  padding: 30px;
+  background: snow;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  height : 300px;
+  border : 2px solid yellow;
+  
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#topgrid{
+	display: grid;
+	grid-template-columns: 85%, 15%;
+	background-color: #3f3a37;
+}
+
+#clglogo{
+	height: 20vh;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#profile_img{
+    width: 18vh;
+    height: 18vh;
+	border-width: 12px;
+	border-color:yellow;
+    margin-left: 20px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+.c1
+{
+	color:orangered;font-weight:bold;font-size:20px;
+}
+

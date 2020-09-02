@@ -1,0 +1,14 @@
+<%
+	String rollno=(String)session.getAttribute("rollno");
+	String branch=(String)session.getAttribute("branch");
+	psmt=con.prepareStatement("select s1.student_name,s1.date_of_birth,o1.student_mobileno,a1.house_no,a1.village_street_area,a1.mandal,a1.district,a1.state,a1.pincode from ssc_details s1,other_details o1,adhar_permanent_address a1 where s1.rollno=? and o1.rollno=? and a1.rollno=?"); 
+	psmt.setString(1,rollno);
+	psmt.setString(2,rollno);
+	psmt.setString(3,rollno);
+	ResultSet rss=psmt.executeQuery();
+	rss.next();
+	
+	%>
+	<table style="position:absolute;left:400px;width:350px;height:250px;" border=1>
+	<tr align=center><td><img src="./photos/<%=str%>.JPG" width="100px" height="100px"></img><br><%=rss.getString(1)%><br>Regd No :<%=rollno%><br>Program : B.Tech(<%=branch%>)<br>Date of Birth:<%=rss.getString(2)%><br>Mobile No:<%=rss.getString(3)%><br><%=rss.getString(4)%>,<%=rss.getString(5)%>,<%=rss.getString(6)%><br><%=rss.getString(7)%>,<%=rss.getString(8)%>,<%=rss.getString(9)%><td>sdfd</tr>
+	</table>

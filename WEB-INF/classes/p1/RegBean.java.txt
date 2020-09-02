@@ -1,0 +1,46 @@
+package p1;
+import java.sql.*;
+public class RegBean
+{
+ private string user,pwd,email,phone;
+ public void setString(user)
+  {
+    u=user;
+  }
+public void setString(pwd)
+  {
+    p=pwd;
+  }
+public void setString(email)
+  {
+    e=email;
+  }
+public void setString(phone)
+  {
+    ph=phone;
+  }
+public void store()
+ {
+   boolean f=false;
+    try
+     {
+      Class.forName("jdbc.odbc.jdbcodbcdriver");
+      Connection con=DriverManager.getConnection("jdbc:odbc:URCE","scott","tiger");
+      preparedStatement psmt=updateQuery("insert into reg values("?,?,?,?")");
+	psmt.setString(1,user);
+        psmt.setString(2,pwd);
+        psmt.setString(3,email);
+        psmt.setString(4,phone);
+	int n=psmt.executeQuery();
+ 	if(n==1)
+ 	{
+   	boolean f=true;
+         
+  	catch Exception(e){}
+       }
+        else 
+          out.println("error");
+}
+
+       
+        

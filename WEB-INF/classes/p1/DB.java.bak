@@ -1,0 +1,15 @@
+
+package p1;
+import java.sql.*;
+
+public class DB 
+{
+	public Connection connect()throws Exception
+	{
+		//Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+		//Connection con = DriverManager.getConnection("jdbc:odbc:feedback","feedback","feedback");
+		Class.forName("oracle.jdbc.OracleDriver");
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@CPLAB-1-66-PC:1521:XE","feedback","feedback");
+		return con;
+	}
+}
